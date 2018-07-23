@@ -148,16 +148,66 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('14')
   })
 
-
-
   // Does it work as expected for a range of numbers ? (positive, negative, decimals, large numbers) 
 
+  // positive
+  it('it should work as expected for positive numbers', function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number8')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number8')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('16')
+  })
 
+  // negative
+  it('it should work as expected for negative numbers', function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number8')).click();
+    element(by.css('#operator_subtract')).click();
+    element(by.css('#number9')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('-1')
+  })
 
+  // decimals
+  it('it should work as expected for decimal numbers', function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number3')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('0.5')
+  })
+
+  // large numbers
+  it('it should work as expected for large numbers', function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number5')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#number5')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#number6')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('370369629630')
+  })
 
   //What does the code do in exceptional circumstances ? 
 
+
+
+
   //If you divide by zero, what is the effect ? 
+
+
 
 
   // Can you write a test to describe what you'd prefer to happen under this circumstance, 
