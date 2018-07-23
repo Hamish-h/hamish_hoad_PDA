@@ -34,4 +34,13 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 5)
   });
 
+  // subtract 7 - 4 and get 3
+  it('it should subtract values, 7 subtracting 4 returns 3', function () {
+    calculator.previousTotal = 0;
+    calculator.operatorClick(calculator.add(7));
+    calculator.operatorClick(calculator.subtract(4));
+    assert.strictEqual(calculator.runningTotal, 3)
+  });
+
+
 });
