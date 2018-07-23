@@ -20,8 +20,14 @@ Calculator.prototype = {
   },
 
   divide: function (number) {
-    this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
 
+    if (element(by.css('#number0')).click(0))
+      throw new RangeError("Attempted division by zero!");
+
+    // if (element(by.css('#number0')).click() === 0);
+    //var error = new Error("Attempt to divide by zero!");
+    // throw new RangeError("Attempt to divide by zero!");
+    this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
   },
 
   numberClick: function (number) {

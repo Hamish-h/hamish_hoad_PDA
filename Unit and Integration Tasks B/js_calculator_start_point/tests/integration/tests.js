@@ -217,7 +217,7 @@ describe('calculator functionality', function () {
     element(by.css('#operator_divide')).click();
     element(by.css('#number0')).click();
     element(by.css('#operator_equals')).click();
-    expect(running_total.getAttribute('value')).to.eventually.equal('cannot divide by zero')
+    expect(running_total.getAttribute('value')).to.eventually.equal('Attempt to divide by zero!')
   })
 
 });
