@@ -96,6 +96,14 @@ describe('calculator functionality', function () {
 
   // Do each of the arithmetical operations work to update the display with the result of the operation ? 
 
+  it('it should add values', function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number9')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number1')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('10')
+  })
 
 
 
@@ -108,11 +116,17 @@ describe('calculator functionality', function () {
 
   // Can we chain multiple operations together ? 
 
+
   // Does it work as expected for a range of numbers ? (positive, negative, decimals, large numbers) 
+
+
+
 
   //What does the code do in exceptional circumstances ? 
 
   //If you divide by zero, what is the effect ? 
+
+
   // Can you write a test to describe what you'd prefer to happen under this circumstance, 
   // and then correct to code to make that test pass.
 
