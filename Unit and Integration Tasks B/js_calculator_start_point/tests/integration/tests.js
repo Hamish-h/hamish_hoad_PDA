@@ -133,6 +133,21 @@ describe('calculator functionality', function () {
   })
 
   // Can we chain multiple operations together ? 
+  it('it should chain multiple operations together', function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number2')).click();
+    element(by.css('#operator_add')).click();
+    element(by.css('#number8')).click();
+    element(by.css('#operator_subtract')).click();
+    element(by.css('#number3')).click();
+    element(by.css('#operator_multiply')).click();
+    element(by.css('#number4')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number2')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('14')
+  })
+
 
 
   // Does it work as expected for a range of numbers ? (positive, negative, decimals, large numbers) 
