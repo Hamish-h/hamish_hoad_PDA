@@ -200,12 +200,7 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('370369629630')
   })
 
-  //What does the code do in exceptional circumstances ? 
-
-
-
-
-  //If you divide by zero, what is the effect ? 
+  //What does the code do in exceptional circumstances ? If you divide by zero, what is the effect ? 
   it('it should return infinity when dividing by zero', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number6')).click();
@@ -216,14 +211,13 @@ describe('calculator functionality', function () {
   })
 
   // Can you write a test to describe what you'd prefer to happen under this circumstance and then correct to code to make that test pass.
-
-
-
-
-
-
-
-
-
+  it('it could return an error message when dividing by zero', function () {
+    running_total = element(by.css('#running_total'))
+    element(by.css('#number5')).click();
+    element(by.css('#operator_divide')).click();
+    element(by.css('#number0')).click();
+    element(by.css('#operator_equals')).click();
+    expect(running_total.getAttribute('value')).to.eventually.equal('cannot divide by zero')
+  })
 
 });

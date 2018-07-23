@@ -1,4 +1,4 @@
-var Calculator = function(){
+var Calculator = function () {
   this.previousOperator = null; // the last operator the user clicked
   this.previousTotal = 0;       // the total of the previous operation
   this.newTotal = true;         // whether the previous operation has just been calculated
@@ -7,23 +7,24 @@ var Calculator = function(){
 
 Calculator.prototype = {
 
-  add: function(number){
+  add: function (number) {
     this.runningTotal = parseFloat(this.previousTotal) + parseFloat(number);
   },
 
-  subtract: function(number){
+  subtract: function (number) {
     this.runningTotal = parseFloat(this.previousTotal) - parseFloat(number);
   },
 
-  multiply: function(number){
+  multiply: function (number) {
     this.runningTotal = parseFloat(this.previousTotal) * parseFloat(number);
   },
 
-  divide: function(number){
+  divide: function (number) {
     this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+
   },
 
-  numberClick: function(number) {
+  numberClick: function (number) {
 
     // when a number is clicked, if a previous operation has just been completed,
     // or there is a zero in the running total, clear the running total, and reset
@@ -38,24 +39,24 @@ Calculator.prototype = {
 
   },
 
-  operatorClick: function(operator) {
+  operatorClick: function (operator) {
 
     // if there was a previous operator recorded as having been clicked, perform
     // the operation for the previous operator
     if (this.previousTotal && this.previousOperator) {
       switch (this.previousOperator) {
         case ('+'):
-        this.add(this.runningTotal);
-        break;
+          this.add(this.runningTotal);
+          break;
         case ('-'):
-        this.subtract(this.runningTotal);
-        break;
+          this.subtract(this.runningTotal);
+          break;
         case ('*'):
-        this.multiply(this.runningTotal);
-        break;
+          this.multiply(this.runningTotal);
+          break;
         case ('/'):
-        this.divide(this.runningTotal);
-        break;
+          this.divide(this.runningTotal);
+          break;
       }
     }
 
@@ -73,7 +74,7 @@ Calculator.prototype = {
     this.newTotal = true;
   },
 
-  clearClick: function() {
+  clearClick: function () {
     if (this.runningTotal == 0) {
       this.previousOperator = null;
       this.previousTotal = null;
@@ -83,4 +84,4 @@ Calculator.prototype = {
 
 };
 
-if (typeof module != 'undefined'){ module.exports = Calculator };
+if (typeof module != 'undefined') { module.exports = Calculator };
