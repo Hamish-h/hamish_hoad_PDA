@@ -53,4 +53,14 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 12345)
   });
 
+  // chain multiple operations together 
+  it('it should chain multiple operations together', function () {
+    calculator.previousTotal = 0;
+    calculator.operatorClick(calculator.add(10));
+    calculator.operatorClick(calculator.multiply(70));
+    calculator.operatorClick(calculator.divide(2));
+    calculator.operatorClick(calculator.subtract(8));
+    calculator.operatorClick(calculator.add(758));
+    assert.strictEqual(calculator.runningTotal, 1100)
+  });
 });
