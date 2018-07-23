@@ -18,4 +18,14 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 15)
   });
 
+  // divide 21 / 7 and get 3
+  it('it should divide values, 21 divided by 7 to return 3', function () {
+    calculator.previousTotal = 0;
+    calculator.operatorClick(calculator.add(21));
+    calculator.operatorClick(calculator.divide(7));
+    assert.strictEqual(calculator.runningTotal, 3)
+  });
+
+
+
 });
