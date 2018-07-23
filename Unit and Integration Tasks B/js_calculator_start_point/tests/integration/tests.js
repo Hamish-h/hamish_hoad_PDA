@@ -10,11 +10,20 @@ describe('calculator functionality', function () {
   });
 
   // write integration tests here in the form of "it should do something..."
+
+  // it should connect to the html page
+  it('it should connect to the html page (local host)', function () {
+    browser.get('http://localhost:3000')
+  });
+
+
   it('should have working number buttons', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number2')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
   })
+
+
 
 
 

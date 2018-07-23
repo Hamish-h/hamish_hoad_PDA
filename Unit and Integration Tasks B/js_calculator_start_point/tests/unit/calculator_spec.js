@@ -75,6 +75,7 @@ describe('calculator', function () {
   });
 
   // additional tests
+
   it('it should accept a negative value and a positive value, passing -50 plus 66 to return 16', function () {
     calculator.previousTotal = 0;
     calculator.operatorClick(calculator.add(-50));
