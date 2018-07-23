@@ -89,4 +89,11 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 50)
   });
 
+  it('it should accept two negative values, passing -10 plus -1 will return -11', function () {
+    calculator.previousTotal = 0;
+    calculator.operatorClick(calculator.add(-10));
+    calculator.operatorClick(calculator.add(-1));
+    assert.strictEqual(calculator.runningTotal, -11)
+  });
+
 });
