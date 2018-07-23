@@ -11,7 +11,7 @@ describe('calculator', function () {
   // ####The program should correctly perform the following tasks:
 
   // multiply 3x5 and get 15
-  it('it should multiply values, 3 times 5 to return 15', function () {
+  it('it should multiply values, 3 times 5 returns 15', function () {
     calculator.previousTotal = 0;
     calculator.operatorClick(calculator.add(3));
     calculator.operatorClick(calculator.multiply(5));
@@ -19,13 +19,19 @@ describe('calculator', function () {
   });
 
   // divide 21 / 7 and get 3
-  it('it should divide values, 21 divided by 7 to return 3', function () {
+  it('it should divide values, 21 divided by 7 returns 3', function () {
     calculator.previousTotal = 0;
     calculator.operatorClick(calculator.add(21));
     calculator.operatorClick(calculator.divide(7));
     assert.strictEqual(calculator.runningTotal, 3)
   });
 
-
+  // add 1 + 4 and get 5
+  it('it should add values, 1 added to 4 returns 5', function () {
+    calculator.previousTotal = 0;
+    calculator.operatorClick(calculator.add(1));
+    calculator.operatorClick(calculator.add(4));
+    assert.strictEqual(calculator.runningTotal, 5)
+  });
 
 });
