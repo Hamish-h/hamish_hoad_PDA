@@ -63,4 +63,15 @@ describe('calculator', function () {
     calculator.operatorClick(calculator.add(758));
     assert.strictEqual(calculator.runningTotal, 1100)
   });
+
+  // clear the running total without affecting the calculation
+  it('it should clear the running total without affecting the calculation', function () {
+    calculator.previousTotal = 0;
+    calculator.operatorClick(calculator.add(5));
+    calculator.numberClick(3);
+    calculator.clearClick();
+    calculator.operatorClick(calculator.add(5));
+    assert.strictEqual(calculator.runningTotal, 10)
+  });
+
 });
