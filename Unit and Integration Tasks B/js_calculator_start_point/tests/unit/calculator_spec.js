@@ -42,5 +42,15 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 3)
   });
 
+  // concatenate multiple number button clicks
+  it('it should concatenate multiple number button clicks', function () {
+    calculator.previousTotal = 0;
+    calculator.numberClick(1);
+    calculator.numberClick(2);
+    calculator.numberClick(3);
+    calculator.numberClick(4);
+    calculator.numberClick(5);
+    assert.strictEqual(calculator.runningTotal, 12345)
+  });
 
 });
