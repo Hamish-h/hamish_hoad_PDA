@@ -97,4 +97,28 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, -11)
   });
 
+  it('it should retain the original value when zero is added', function () {
+    calculator.operatorClick(calculator.add(55));
+    calculator.operatorClick(calculator.add(0));
+    assert.strictEqual(calculator.runningTotal, 55)
+  });
+
+  it('it should retain the original value when zero is subtracted', function () {
+    calculator.operatorClick(calculator.add(55));
+    calculator.operatorClick(calculator.subtract(0));
+    assert.strictEqual(calculator.runningTotal, 55)
+  });
+
+  it('it should return a value multiplied by zero, as zero', function () {
+    calculator.operatorClick(calculator.add(55));
+    calculator.operatorClick(calculator.multiply(0));
+    assert.strictEqual(calculator.runningTotal, 0)
+  });
+
+  it('it should error handle a value divided by zero', function () {
+    calculator.operatorClick(calculator.add(55));
+    calculator.operatorClick(calculator.divide(0));
+    assert.strictEqual(calculator.runningTotal, Infinity)
+  });
+
 });

@@ -20,14 +20,15 @@ Calculator.prototype = {
   },
 
   divide: function (number) {
-
-    if (element(by.css('#number0')).click(0))
-      throw new RangeError("Attempted division by zero!");
-
-    // if (element(by.css('#number0')).click() === 0);
-    //var error = new Error("Attempt to divide by zero!");
-    // throw new RangeError("Attempt to divide by zero!");
     this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
+
+    // INTEGRATION TEST CODE COMMENTED OUT
+    // SEE TEST 22 'tests/integration.tests.js'
+
+    // if (this.runningTotal === Infinity) {
+    //   this.runningTotal = 'Attempt to divide by zero!'
+    // }
+
   },
 
   numberClick: function (number) {

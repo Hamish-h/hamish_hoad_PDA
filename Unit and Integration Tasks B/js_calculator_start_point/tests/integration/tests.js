@@ -18,7 +18,7 @@ describe('calculator functionality', function () {
 
   // Do the number buttons work to update the display of the running total ? 
 
-  it('should have working number buttons', function () {
+  it('Test 1. it should have working number buttons', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number1')).click();
     element(by.css('#number2')).click();
@@ -33,61 +33,61 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('1234567890')
   })
 
-  it('it should have a working 1 button', function () {
+  it('Test 2. it should have a working 1 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number1')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('1')
   })
 
-  it('it should have a working 2 button', function () {
+  it('Test 3. it should have a working 2 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number2')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('2')
   })
 
-  it('it should have a working 3 button', function () {
+  it('Test 4. it should have a working 3 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number3')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('3')
   })
 
-  it('it should have a working 4 button', function () {
+  it('Test 5. it should have a working 4 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number4')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('4')
   })
 
-  it('it should have a working 5 button', function () {
+  it('Test 6. it should have a working 5 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number5')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('5')
   })
 
-  it('it should have a working 6 button', function () {
+  it('Test 7. it should have a working 6 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number6')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('6')
   })
 
-  it('it should have a working 7 button', function () {
+  it('Test 8. it should have a working 7 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number7')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('7')
   })
 
-  it('it should have a working 8 button', function () {
+  it('Test 9. it should have a working 8 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number8')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('8')
   })
 
-  it('it should have a working 9 button', function () {
+  it('Test 10. it should have a working 9 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number9')).click();
     expect(running_total.getAttribute('value')).to.eventually.equal('9')
   })
 
-  it('it should have a working 0 button', function () {
+  it('Test 11. it should have a working 0 button', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number1')).click();
     element(by.css('#number0')).click();
@@ -96,7 +96,7 @@ describe('calculator functionality', function () {
 
   // Do each of the arithmetical operations work to update the display with the result of the operation ? 
 
-  it('it should add values', function () {
+  it('Test 12. it should add values', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number9')).click();
     element(by.css('#operator_add')).click();
@@ -105,7 +105,7 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('10')
   })
 
-  it('it should subtract values', function () {
+  it('Test 13. it should subtract values', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number9')).click();
     element(by.css('#operator_subtract')).click();
@@ -114,7 +114,7 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('8')
   })
 
-  it('it should multiply values', function () {
+  it('Test 14. it should multiply values', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number9')).click();
     element(by.css('#operator_multiply')).click();
@@ -123,7 +123,7 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('18')
   })
 
-  it('it should divide values', function () {
+  it('Test 15. it should divide values', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number9')).click();
     element(by.css('#operator_divide')).click();
@@ -133,7 +133,7 @@ describe('calculator functionality', function () {
   })
 
   // Can we chain multiple operations together ? 
-  it('it should chain multiple operations together', function () {
+  it('Test 16. it should chain multiple operations together', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number2')).click();
     element(by.css('#operator_add')).click();
@@ -151,7 +151,7 @@ describe('calculator functionality', function () {
   // Does it work as expected for a range of numbers ? (positive, negative, decimals, large numbers) 
 
   // positive
-  it('it should work as expected for positive numbers', function () {
+  it('Test 17. it should work as expected for positive numbers', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number8')).click();
     element(by.css('#operator_add')).click();
@@ -161,7 +161,7 @@ describe('calculator functionality', function () {
   })
 
   // negative
-  it('it should work as expected for negative numbers', function () {
+  it('Test 18. it should work as expected for negative numbers', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number8')).click();
     element(by.css('#operator_subtract')).click();
@@ -171,7 +171,7 @@ describe('calculator functionality', function () {
   })
 
   // decimals
-  it('it should work as expected for decimal numbers', function () {
+  it('Test 19. it should work as expected for decimal numbers', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number3')).click();
     element(by.css('#operator_divide')).click();
@@ -181,7 +181,7 @@ describe('calculator functionality', function () {
   })
 
   // large numbers
-  it('it should work as expected for large numbers', function () {
+  it('Test 20. it should work as expected for large numbers', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number5')).click();
     element(by.css('#number5')).click();
@@ -200,8 +200,8 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('370369629630')
   })
 
-  //What does the code do in exceptional circumstances ? If you divide by zero, what is the effect ? 
-  it('it should return infinity when dividing by zero', function () {
+  // Task: What does the code do in exceptional circumstances ? If you divide by zero, what is the effect ? 
+  it('Test 21. it should return infinity when dividing by zero', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number6')).click();
     element(by.css('#operator_divide')).click();
@@ -210,14 +210,20 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('Infinity')
   })
 
-  // Can you write a test to describe what you'd prefer to happen under this circumstance and then correct to code to make that test pass.
-  it('it could return an error message when dividing by zero', function () {
-    running_total = element(by.css('#running_total'))
-    element(by.css('#number5')).click();
-    element(by.css('#operator_divide')).click();
-    element(by.css('#number0')).click();
-    element(by.css('#operator_equals')).click();
-    expect(running_total.getAttribute('value')).to.eventually.equal('Attempt to divide by zero!')
-  })
+  // Task: Can you write a test to describe what you'd prefer to happen under this circumstance and then correct to code to make that test pass.
+
+  // CHECKED THIS TASK WITH THE COURSE INSTRUCTOR
+  // Integration Test 21 and Test 22 will clash in that they cannot both run and pass at the same time. They both work independently of one another. Test 21 checks for Infinity while Test 22 checks for a replacement Infinity error message. My instructions were to comment out the code for one.
+
+  // TEST 22 COMMENTED OUT - SEE ABOVE MESSAGE
+
+  // it('Test 22. it could return an error message when dividing by zero', function () {
+  //   running_total = element(by.css('#running_total'))
+  //   element(by.css('#number5')).click();
+  //   element(by.css('#operator_divide')).click();
+  //   element(by.css('#number0')).click();
+  //   element(by.css('#operator_equals')).click();
+  //   expect(running_total.getAttribute('value')).to.eventually.equal('Attempt to divide by zero!')
+  // })
 
 });
