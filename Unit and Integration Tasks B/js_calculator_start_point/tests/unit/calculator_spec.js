@@ -11,35 +11,67 @@ describe('calculator', function () {
   // ####The program should correctly perform the following tasks:
 
   // multiply 3x5 and get 15
-  it('it should multiply values, 3 times 5 returns 15', function () {
+  it('it should multiply values, 3 times 5 returns 15 - METHOD A', function () {
     calculator.previousTotal = 0;
     calculator.operatorClick(calculator.add(3));
     calculator.operatorClick(calculator.multiply(5));
     assert.strictEqual(calculator.runningTotal, 15)
   });
 
+  it('it should multiply values, 3 times 5 returns 15 - METHOD B', function () {
+    const x = 3;
+    const y = 5;
+    const expected = 15;
+    const actual = (x * y)
+    assert.strictEqual(expected, actual)
+  });
+
   // divide 21 / 7 and get 3
-  it('it should divide values, 21 divided by 7 returns 3', function () {
+  it('it should divide values, 21 divided by 7 returns 3 - METHOD A', function () {
     calculator.previousTotal = 0;
     calculator.operatorClick(calculator.add(21));
     calculator.operatorClick(calculator.divide(7));
     assert.strictEqual(calculator.runningTotal, 3)
   });
 
+  it('it should divide values, 21 divided by 7 returnS 3 - METHOD B', function () {
+    const x = 21;
+    const y = 7;
+    const expected = 3;
+    const actual = (x / y)
+    assert.strictEqual(expected, actual)
+  });
+
   // add 1 + 4 and get 5
-  it('it should add values, 1 added to 4 returns 5', function () {
+  it('it should add values, 1 added to 4 returns 5 - METHOD A', function () {
     calculator.previousTotal = 0;
     calculator.operatorClick(calculator.add(1));
     calculator.operatorClick(calculator.add(4));
     assert.strictEqual(calculator.runningTotal, 5)
   });
 
+  it('it should add values, 1 added to 4 returns 5 - METHOD B', function () {
+    const x = 1;
+    const y = 4;
+    const expected = 5;
+    const actual = (x + y)
+    assert.strictEqual(expected, actual)
+  });
+
   // subtract 7 - 4 and get 3
-  it('it should subtract values, 7 subtracting 4 returns 3', function () {
+  it('it should subtract values, 7 subtracting 4 returns 3 - METHOD A', function () {
     calculator.previousTotal = 0;
     calculator.operatorClick(calculator.add(7));
     calculator.operatorClick(calculator.subtract(4));
     assert.strictEqual(calculator.runningTotal, 3)
+  });
+
+  it('it should subtract values, 7 subtracting 4 returns 3 - METHOD B', function () {
+    const x = 7;
+    const y = 4;
+    const expected = 3;
+    const actual = (x - y)
+    assert.strictEqual(expected, actual)
   });
 
   // concatenate multiple number button clicks
@@ -115,7 +147,7 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 0)
   });
 
-  it('it should error handle a value divided by zero', function () {
+  it('it should return a value divided by zero as Infinity', function () {
     calculator.operatorClick(calculator.add(55));
     calculator.operatorClick(calculator.divide(0));
     assert.strictEqual(calculator.runningTotal, Infinity)
