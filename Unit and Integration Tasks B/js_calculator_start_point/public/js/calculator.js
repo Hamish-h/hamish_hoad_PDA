@@ -21,11 +21,11 @@ Calculator.prototype = {
 
   divide: function (number) {
     this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
-    // // INTEGRATION TEST CODE COMMENTED OUT: SEE TEST 22 'tests/integration.tests.js'
+    // // INTEGRATION TEST CODE COMMENTED OUT:
+    // // SEE TEST 22 'tests/integration/tests.js'
     // if (this.runningTotal === Infinity) {
     //   this.runningTotal = 'Attempt to divide by zero!'
     // }
-    // // INTEGRATION TEST CODE COMMENTED OUT: SEE TEST 22 'tests/integration.tests.js'
   },
 
   numberClick: function (number) {

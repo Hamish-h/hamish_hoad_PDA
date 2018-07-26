@@ -16,7 +16,7 @@ describe('calculator functionality', function () {
     browser.get('http://localhost:3000')
   });
 
-  // Do the number buttons work to update the display of the running total ? 
+  // Do the number buttons work to update the display of the running total ?
 
   it('Test 1. it should have working number buttons', function () {
     running_total = element(by.css('#running_total'))
@@ -94,7 +94,7 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('10')
   })
 
-  // Do each of the arithmetical operations work to update the display with the result of the operation ? 
+  // Do each of the arithmetical operations work to update the display with the result of the operation ?
 
   it('Test 12. it should add values', function () {
     running_total = element(by.css('#running_total'))
@@ -132,7 +132,7 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('3')
   })
 
-  // Can we chain multiple operations together ? 
+  // Can we chain multiple operations together ?
   it('Test 16. it should chain multiple operations together', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number2')).click();
@@ -148,7 +148,7 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('14')
   })
 
-  // Does it work as expected for a range of numbers ? (positive, negative, decimals, large numbers) 
+  // Does it work as expected for a range of numbers ? (positive, negative, decimals, large numbers)
 
   // positive
   it('Test 17. it should work as expected for positive numbers', function () {
@@ -200,7 +200,7 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('370369629630')
   })
 
-  // Task: What does the code do in exceptional circumstances ? If you divide by zero, what is the effect ? 
+  // Task: What does the code do in exceptional circumstances ? If you divide by zero, what is the effect ?
   it('Test 21. it should return infinity when dividing by zero', function () {
     running_total = element(by.css('#running_total'))
     element(by.css('#number6')).click();
@@ -210,12 +210,18 @@ describe('calculator functionality', function () {
     expect(running_total.getAttribute('value')).to.eventually.equal('Infinity')
   })
 
-  // Task: Can you write a test to describe what you'd prefer to happen under this circumstance and then correct to code to make that test pass.
+  // Task: Can you write a test to describe what you'd prefer to happen
+  // under this circumstance and then correct to code to make that test pass.
 
   // CHECKED THIS TASK WITH THE COURSE INSTRUCTOR
-  // Integration Test 21 and Test 22 will clash in that they cannot both run and pass at the same time. They both work independently of one another. Test 21 checks for Infinity while Test 22 checks for a replacement Infinity error message. My instructions were to comment out the code for one.
+  // Integration Test 21 and Test 22 will clash in that they cannot both
+  // run and pass at the same time. They both work independently of one
+  // another. Test 21 checks for Infinity while Test 22 checks for a
+  // replacement error message instead of Infinity.
+  // My instructions were to comment out the code for one test.
 
   // TEST 22 COMMENTED OUT - SEE ABOVE MESSAGE
+  // TEST 22 CODE COMMENTED OUT - SEE line 24 'public/js/calculator.js'
 
   // it('Test 22. it could return an error message when dividing by zero', function () {
   //   running_total = element(by.css('#running_total'))
