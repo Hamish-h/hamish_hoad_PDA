@@ -8,6 +8,10 @@ describe('calculator', function () {
 
   // write unit tests here in the form of "it should do something..."
 
+  // Note:
+  // There are different methods to run some tests, I have included two
+  // methods which & where I thought appropriate (METHOD A and METHOD B).
+
   // ####The program should correctly perform the following tasks:
 
   // multiply 3x5 and get 15
@@ -85,7 +89,7 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 12345)
   });
 
-  // chain multiple operations together 
+  // chain multiple operations together
   it('it should chain multiple operations together', function () {
     calculator.previousTotal = 0;
     calculator.operatorClick(calculator.add(10));
@@ -106,7 +110,9 @@ describe('calculator', function () {
     assert.strictEqual(calculator.runningTotal, 10)
   });
 
-  // additional tests
+  // Note:
+  // The following additional tests were not requested in the
+  // 'calculation testing.md' but seemed appropriate. 
 
   it('it should accept a negative value and a positive value, passing -50 plus 66 to return 16', function () {
     calculator.previousTotal = 0;

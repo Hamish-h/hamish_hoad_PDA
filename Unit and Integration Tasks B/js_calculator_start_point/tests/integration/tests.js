@@ -221,7 +221,7 @@ describe('calculator functionality', function () {
   // My instructions were to comment out the code for one test.
 
   // TEST 22 COMMENTED OUT - SEE ABOVE MESSAGE
-  // TEST 22 CODE COMMENTED OUT - SEE line 24 'public/js/calculator.js'
+  // TEST 22 CODE COMMENTED OUT (at line 24 'public/js/calculator.js')
 
   // it('Test 22. it could return an error message when dividing by zero', function () {
   //   running_total = element(by.css('#running_total'))
